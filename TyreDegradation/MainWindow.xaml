@@ -1,0 +1,79 @@
+﻿<Window x:Class="TyreDegradation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TyreDegradation"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="639" Width="800">
+    <Grid d:DataContext="{d:DesignInstance {x:Type local:ViewModel}}" Height="622">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="667*"/>
+            <ColumnDefinition Width="133*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Margin="366,10,0,0" Text="Selections" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <ComboBox x:Name="FLCombo" HorizontalAlignment="Left" Margin="240,64,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" FontSize="8" SelectionChanged="FLCombo_SelectionChanged" Panel.ZIndex="1"/>
+        <ComboBox x:Name="FRCombo" HorizontalAlignment="Left" Margin="439,65,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" FontSize="8" SelectionChanged="FRCombo_SelectionChanged" Panel.ZIndex="1"/>
+        <ComboBox x:Name="RLCombo" HorizontalAlignment="Left" Margin="240,139,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" FontSize="8" SelectionChanged="RLCombo_SelectionChanged" Panel.ZIndex="1"/>
+        <ComboBox x:Name="RRCombo" HorizontalAlignment="Left" Margin="439,139,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" FontSize="8" SelectionChanged="RRCombo_SelectionChanged" Panel.ZIndex="1"/>
+        <TextBlock x:Name="FLLabel" HorizontalAlignment="Left" Margin="178,65,0,0" Text="Front Left" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock x:Name="FRLabel" HorizontalAlignment="Left" Margin="572,65,0,0" Text="Front Right" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1" Width="64"/>
+        <TextBlock x:Name="RLLabel" HorizontalAlignment="Left" Margin="178,139,0,0" Text="Rear Left" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock x:Name="RRLabel" HorizontalAlignment="Left" Margin="572,139,0,0" Text="Rear Right" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <ComboBox x:Name="TrackCombo" HorizontalAlignment="Left" Margin="240,180,0,0" VerticalAlignment="Top" Width="120" FontSize="8" SelectionChanged="TrackCombo_SelectionChanged" Panel.ZIndex="1"/>
+        <TextBlock x:Name="TrackLabel" HorizontalAlignment="Left" Margin="180,180,0,0" Text="Track" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="429,180,0,0" Text="Temperature" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBox x:Name="TempBox" HorizontalAlignment="Left" Margin="506,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" FontWeight="Bold" TextChanged="TempBox_TextChanged" Panel.ZIndex="1"/>
+        <TextBlock x:Name="ResultsLabel" HorizontalAlignment="Left" Margin="376,225,0,0" Text="Results" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1" FontSize="14" FontWeight="Bold"/>
+        <TextBlock x:Name="FLResLabel" HorizontalAlignment="Left" Margin="230,270,0,0" Text="Front Left" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock x:Name="FRResLabel" HorizontalAlignment="Left" Margin="513,270,0,0" Text="Front Right" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock x:Name="RLResLabel" HorizontalAlignment="Left" Margin="229,413,0,0" Text="Rear Left" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock x:Name="RRResLabel" HorizontalAlignment="Left" Margin="513,413,0,0" Text="Rear Right" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="188,0,0,0" Text="Average" TextWrapping="Wrap" VerticalAlignment="Center" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="188,331,0,0" Text="Mode" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="188,359,0,0" Text="Range" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="483,303,0,0" Text="Average" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="483,331,0,0" Text="Mode" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="483,359,0,0" Text="Range" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="185,446,0,0" Text="Average" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="185,474,0,0" Text="Mode" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="185,502,0,0" Text="Range" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="480,446,0,0" Text="Average" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="480,474,0,0" Text="Mode" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="480,502,0,0" Text="Range" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1"/>
+        <TextBlock x:Name="FLARes" HorizontalAlignment="Left" Margin="270,0,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Center" Panel.ZIndex="1" Background="White"/>
+        <TextBlock x:Name="FLMRes" HorizontalAlignment="Left" Margin="270,331,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1" Background="White"/>
+        <TextBlock x:Name="FLRRes" HorizontalAlignment="Left" Margin="270,359,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1" Background="White"/>
+        <TextBlock x:Name="FRARes" HorizontalAlignment="Left" Margin="562,303,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1" Background="White"/>
+        <TextBlock x:Name="FRMRes" HorizontalAlignment="Left" Margin="562,331,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1" Background="White"/>
+        <TextBlock x:Name="FRRRes" HorizontalAlignment="Left" Margin="562,359,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1" Background="White"/>
+        <TextBlock x:Name="RLARes" HorizontalAlignment="Left" Margin="270,446,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1" Background="White"/>
+        <TextBlock x:Name="RLMRes" HorizontalAlignment="Left" Margin="270,474,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1" Background="White"/>
+        <TextBlock x:Name="RLRRes" HorizontalAlignment="Left" Margin="270,502,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1" Background="White"/>
+        <TextBlock x:Name="RRARes" HorizontalAlignment="Left" Margin="562,446,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1" Background="White"/>
+        <TextBlock x:Name="RRMRes" HorizontalAlignment="Left" Margin="562,474,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1" Background="White"/>
+        <TextBlock x:Name="RRRRes" HorizontalAlignment="Left" Margin="562,502,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Panel.ZIndex="1" Background="White"/>
+        <Button x:Name="TempResetButton" Content="Current Temperature" HorizontalAlignment="Left" Margin="577,178,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="119" Click="TempResetButton_Click" Panel.ZIndex="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="526,202,0,0" Text="t &gt; 0C" TextWrapping="Wrap" VerticalAlignment="Top" Width="26" FontSize="8" Panel.ZIndex="1"/>
+        <Rectangle HorizontalAlignment="Left" Height="137" Margin="162,262,0,0" Stroke="Black" VerticalAlignment="Top" Width="186" Fill="#FFE28C24" Opacity="0.75"/>
+        <Rectangle HorizontalAlignment="Left" Height="137" Margin="450,262,0,0" Stroke="Black" VerticalAlignment="Top" Width="186" Fill="#FFE28C24" Opacity="0.75"/>
+        <Rectangle HorizontalAlignment="Left" Height="137" Margin="162,404,0,0" Stroke="Black" VerticalAlignment="Top" Width="186" Fill="#FFE28C24" Opacity="0.75"/>
+        <Rectangle HorizontalAlignment="Left" Height="137" Margin="450,404,0,0" Stroke="Black" VerticalAlignment="Top" Width="186" Fill="#FFE28C24" Opacity="0.75"/>
+        <Rectangle HorizontalAlignment="Left" Height="181" Margin="68,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="666" Fill="#FFE28C24" Grid.ColumnSpan="2" Opacity="0.75"/>
+        <Image HorizontalAlignment="Left" Height="129" Margin="373,44,0,0" VerticalAlignment="Top" Width="53" Source="car_sprite.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.901"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <TextBlock HorizontalAlignment="Left" Margin="80,565,0,0" Text="0 - 100" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FF0DB414"/>
+        <TextBlock HorizontalAlignment="Left" Margin="130,565,0,0" Text="100 - 200" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FFFFDD07"/>
+        <TextBlock HorizontalAlignment="Left" Margin="195,565,0,0" Text="&gt;200" TextWrapping="Wrap" VerticalAlignment="Top" Background="#FFFF300F"/>
+        <Image HorizontalAlignment="Left" Height="245" Margin="46,160,0,0" VerticalAlignment="Top" Width="688" Source="Renault_F1_Team_logo_2019.png" Grid.ColumnSpan="2" Panel.ZIndex="-1" Opacity="0.2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="582,202,0,0" Text="Source: openweathermap.org" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" FontSize="8" Panel.ZIndex="1" Height="11" Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>
